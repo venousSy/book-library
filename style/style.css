@@ -164,6 +164,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  min-height: 40vh;
 }
 
 .bookCard {

@@ -5,27 +5,7 @@ function book(title, auther, pages, read) {
   this.pages = pages
 }
 
-const book1 = new book('ads', 'aa', 'qwe', true)
-
-const book2 = new book('22', '22', '2', true)
-
-const myLibrary = [
-  book1,
-  book2,
-  book1,
-  book2,
-  book1,
-  book2,
-  book1,
-  book2,
-  book1,
-  book2,
-  book1,
-  book2,
-
-  book1,
-  book2,
-]
+const myLibrary = []
 // dialog logic
 ;(() => {
   const dialog = document.querySelector('dialog')
@@ -42,7 +22,7 @@ const myLibrary = [
     dialog.close()
   })
 })()
-
+let arrayCounter = 0
 const addBooksToLibrary = () => {
   // creat a new div and appand it to popular div
   const addTheBooks = (boock) => {
@@ -74,7 +54,24 @@ const addBooksToLibrary = () => {
             `
   }
   // looping thorgh myLibrary array
-  myLibrary.forEach(addTheBooks)
+
+  addTheBooks(myLibrary[arrayCounter])
+  arrayCounter += 1
 }
 
-addBooksToLibrary()
+formSubmit = document.getElementById('bookSubmit')
+const getDataToArray = (event) => {
+  event.preventDefault()
+  const formInput = event.target
+  const title = formInput.title.value
+  const auther = formInput.auther.value
+  const pages = formInput.pages.value
+  const read = formInput.read.value
+
+  const bookCard = new book(title, auther, pages, read)
+
+  myLibrary.push(bookCard)
+
+  addBooksToLibrary()
+}
+formSubmit.addEventListener('submit', getDataToArray)

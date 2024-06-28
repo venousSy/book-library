@@ -53,19 +53,34 @@
             <dialog>
               <div class="bookForm">
                 <p>This modal dialog has a groovy backdrop!</p>
-                <form action="submit" class="bookSubmit">
-                  <input type="text" placeholder="Book title" />
-                  <input type="text" placeholder="Auther" />
-                  <input type="number" placeholder="Pages number" />
+                <form action="submit" class="bookSubmit" id="bookSubmit">
+                  <input
+                    type="text"
+                    placeholder="Book title"
+                    name="title"
+                    required="true"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Auther name"
+                    name="auther"
+                    required="true"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Pages number"
+                    name="pages"
+                    required="true"
+                  />
                   <div class="">
                     <label for="readIt">Did you read the book</label>
-                    <select id="readIt">
+                    <select id="readIt" name="read">
                       <option value="true">Yes</option>
                       <option value="false">No</option>
                     </select>
                   </div>
-                  <input type="submit" />
-                  <button>Close</button>
+                  <input type="submit" name="submit" />
+                  <button type="reset">Close</button>
                 </form>
               </div>
             </dialog>
