@@ -39,7 +39,7 @@ const addBooksToLibrary = () => {
 
     bookCard.innerHTML = `
               <img
-                src="/assets/books/istockphoto-1166419449-1024x1024.jpg"
+                src="assets/books/istockphoto-1166419449-1024x1024.jpg"
                 alt=""
                 class="book-img"
               />
